@@ -1,0 +1,120 @@
+body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #000;
+            color: #fff;
+        }
+        h1, h2 {
+            margin: 8px 0;
+        }
+        .small-button {
+            background: linear-gradient(145deg, #a259ff 0%, #6d28d9 100%);
+            color: #fff;
+            border: none;
+            padding: 16px 64px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            margin: 42px 0 12px 0; /* 30px extra margin-top */
+            transition: box-shadow 0.3s, background 0.2s, transform 0.2s;
+            box-shadow: 0 4px 24px 0 #a259ff, 0 2px 8px 0 #6d28d9, 0 1px 0 #fff3 inset;
+            min-width: 400px;
+            border: 2px solid #fff3;
+            box-shadow:
+                0 0 32px 8px #a259ffcc,
+                0 0 64px 16px #7c3aed88,
+                0 4px 24px 0 #a259ff,
+                0 2px 8px 0 #6d28d9,
+                0 1px 0 #fff3 inset,
+                0 0 24px 8px #a259ff99,
+                0 8px 32px 0 #fff3 inset,
+                0 2px 0 #fff8 inset,
+                0 6px 24px 0 #0008;
+            background-image:
+                linear-gradient(145deg, #a259ff 0%, #6d28d9 100%),
+                linear-gradient(0deg, #fff2 0%, #fff0 60%);
+            position: relative;
+            overflow: hidden;
+            animation: glowPulse 1.5s infinite alternate;
+        }
+        @keyframes glowPulse {
+            0% {
+                box-shadow:
+                    0 0 32px 8px #a259ffcc,
+                    0 0 64px 16px #7c3aed88,
+                    0 4px 24px 0 #a259ff,
+                    0 2px 8px 0 #6d28d9,
+                    0 1px 0 #fff3 inset,
+                    0 0 24px 8px #a259ff99,
+                    0 8px 32px 0 #fff3 inset,
+                    0 2px 0 #fff8 inset,
+                    0 6px 24px 0 #0008;
+            }
+            100% {
+                box-shadow:
+                    0 0 48px 16px #a259ffff,
+                    0 0 96px 32px #7c3aedcc,
+                    0 4px 24px 0 #a259ff,
+                    0 2px 8px 0 #6d28d9,
+                    0 1px 0 #fff3 inset,
+                    0 0 24px 8px #a259ff99,
+                    0 8px 32px 0 #fff3 inset,
+                    0 2px 0 #fff8 inset,
+                    0 6px 24px 0 #0008;
+            }
+        }
+        .small-button::after {
+            content: "";
+            position: absolute;
+            left: 20%;
+            top: 0;
+            width: 60%;
+            height: 40%;
+            background: linear-gradient(120deg, #fff8 0%, #fff2 100%);
+            opacity: 0.5;
+            border-radius: 50%;
+            filter: blur(4px);
+            pointer-events: none;
+        }
+        .small-button {
+            min-width: 400px;
+            box-shadow:
+                0 4px 24px 0 #a259ff,
+                0 2px 8px 0 #6d28d9,
+                0 1px 0 #fff3 inset,
+                0 0 24px 8px #a259ff99,
+                0 8px 32px 0 #fff3 inset;
+            filter: drop-shadow(0 0 16px #a259ff) drop-shadow(0 0 32px #6d28d9);
+            font-weight: bold;
+            text-shadow: 0 2px 8px #a259ff99, 0 1px 0 #fff3;
+        }
+        .small-button:hover, .small-button:focus, .small-button:active, .small-button.touch-glow {
+            background: linear-gradient(145deg, #c084fc 0%, #7c3aed 100%);
+            box-shadow:
+                0 4px 24px 0 #a259ff,
+                0 2px 8px 0 #6d28d9,
+                0 1px 0 #fff3 inset,
+                0 0 48px 16px #a259ffff,
+                0 0 96px 32px #7c3aedcc,
+                0 0 24px 8px #a259ff99,
+                0 8px 32px 0 #fff3 inset;
+            filter: drop-shadow(0 0 16px #a259ff) drop-shadow(0 0 32px #6d28d9);
+            transform: translateY(-4px) scale(1.07);
+            animation: none;
+        }
+        /* Touch support */
+        @media (hover: none) and (pointer: coarse) {
+            .small-button:active, .small-button.touch-glow {
+                background: linear-gradient(145deg, #c084fc 0%, #7c3aed 100%);
+                box-shadow:
+                    0 0 64px 24px #a259ff,
+                    0 0 128px 32px #7c3aed,
+                    0 2px 8px 0 #fff3 inset;
+                transform: translateY(-4px) scale(1.07);
+                animation: none;
+            }
+        }
